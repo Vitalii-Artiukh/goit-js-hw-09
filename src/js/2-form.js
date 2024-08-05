@@ -23,6 +23,7 @@ const addToLS = event => {
 
 const submitForm = event => {
   event.preventDefault();
+
   if (
     formFidbackElem.elements.email.value === '' ||
     formFidbackElem.elements.message.value === ''
@@ -33,6 +34,7 @@ const submitForm = event => {
   console.log(formData);
   event.target.reset();
   localStorage.removeItem('feedback-form-state');
+  formData = { email: '', message: '' };
 };
 formFidbackElem.addEventListener('input', addToLS);
 formFidbackElem.addEventListener('submit', submitForm);
